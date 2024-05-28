@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Investimento Idle</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="fundos.json"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div id="progressBar"></div>
+
+    <div class="investimentos">
+        <h1>Investimentos</h1>
+        <div class="stats">
+            <p>Patrimônio: R$  <span id="balance">0</span></p>
+            <p>Rendimento por mês: R$ <span id="earningsPerSecond">0</span></p>
+        </div>
+        <div id="workButton" class="fund-button" title="Salário mínimo R$ 1.640,00 equivale a aproximadamente R$ 54,60 por dia">Trabalhar (+R$ 54,60)</div>
+
+        <br>
+
+        <div id="customInvestment">
+            <input type="text" id="tickerInput" placeholder="Digite o ticker do FII">
+            <button id="addCustomInvestment" class="add-button">+</button>
+        </div>
+
+        <div id="customInvestments">
+            <!-- Lista de investimentos personalizados será exibida aqui -->
+        </div>
+        a cada 30 dias você receberá os dividendos do seus investimentos
+    </div>
+
+    <div id="logs"></div>
+
+    <div id="investmentConfigModal" class="modal">
+        <div class="investmentModal modal-content">
+            <span id="closeInvestmentConfigModal" class="close">&times;</span>
+            <h2>Configuração de Investimentos</h2>
+            <div id="investmentConfigContainer"></div>
+        </div>
+    </div>
+
+    <button id="settingsButton" class="settings-button">&#9881;</button>
+
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Opções</h2>
+            <button id="hardResetButton" class="fund-button">Hard reset</button>
+            <button id="configInvestmentList" class="fund-button">Configurar lista de investimentos</button>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <span id="closeConfirmModal" class="close">&times;</span>
+            <h2>Confirmação</h2>
+            <p>Tem certeza de que deseja fazer um Hard Reset? Todos os dados serão perdidos definitivamente.</p>
+            <button id="confirmReset" class="fund-button">Confirmar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
